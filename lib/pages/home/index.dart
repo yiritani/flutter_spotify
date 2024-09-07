@@ -29,20 +29,26 @@ class _HomePageState extends State<HomePage> {
                 CategoryButton(),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: SizedBox(
-                height: 240,
-                child: LatestListenedTitle(),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    child: SizedBox(
+                      height: 240,
+                      child: LatestListenedTitle(),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    child: SizedBox(
+                      height: 300,
+                      child: NewRelease(),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: SizedBox(
-                height: 300,
-                child: NewRelease(),
-              ),
-            ),
+            )
           ],
         ),
       ),

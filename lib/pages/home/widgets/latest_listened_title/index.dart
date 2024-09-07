@@ -57,18 +57,21 @@ class _LatestListenedTitleState extends State<LatestListenedTitle> {
   @override
   Widget build(BuildContext context) {
     final latestTitles = _fetchLatestTitles();
-    return GridView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 1,
-        crossAxisSpacing: 1,
-        childAspectRatio: 3.3,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 2,
+          crossAxisSpacing: 10,
+          childAspectRatio: 3.3,
+        ),
+        itemCount: latestTitles.length,
+        itemBuilder: (BuildContext context, int index) {
+          return LatestListenedTitleCard(title: latestTitles[index]);
+        },
       ),
-      itemCount: latestTitles.length,
-      itemBuilder: (BuildContext context, int index) {
-        return LatestListenedTitleCard(title: latestTitles[index]);
-      },
     );
   }
 }
