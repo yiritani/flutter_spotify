@@ -22,11 +22,11 @@ class _NewReleaseTitleCardState extends State<NewReleaseTitleCard> {
               bottomLeft: Radius.circular(4),
             ),
             child: Image.network(widget.title['imageUrl']!,
-                width: 160, height: 160, fit: BoxFit.cover),
+                width: 140, height: 140, fit: BoxFit.cover),
           ),
           Expanded(
             child: Container(
-              height: 160,
+              height: 140,
               padding: const EdgeInsets.symmetric(horizontal: 8),
               decoration: const BoxDecoration(
                 color: UtilColor.secondaryBackgroundColor,
@@ -57,23 +57,42 @@ class _NewReleaseTitleCardState extends State<NewReleaseTitleCard> {
                         color: Colors.white,
                       ),
                     ),
-                    const Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.add_circle_outline,
-                            color: UtilColor.secondaryAccentColor,
-                            size: 30,
+                    Expanded(
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () {
+                              print('Add icon tapped');
+                            },
+                            splashColor: Colors.blue,
+                            borderRadius: BorderRadius.circular(30),
+                            child: const Icon(
+                              Icons.add_circle_outline,
+                              color: UtilColor.secondaryAccentColor,
+                              size: 30,
+                            ),
                           ),
-                          Icon(
-                            Icons.play_circle,
-                            color: UtilColor.secondaryAccentColor,
-                            size: 40,
-                          )
-                        ],
-                      ),
-                    )
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () {
+                              print('Play icon tapped');
+                            },
+                            splashColor: Colors.blue,
+                            borderRadius: BorderRadius.circular(40),
+                            child: const Icon(
+                              Icons.play_circle,
+                              color: UtilColor.secondaryAccentColor,
+                              size: 40,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ))
                   ],
                 ),
               ),

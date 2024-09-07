@@ -13,54 +13,57 @@ class LatestListenedTitleCard extends StatefulWidget {
 class _LatestListenedTitleCardState extends State<LatestListenedTitleCard> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        print(widget.title);
-      },
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(4),
-                bottomLeft: Radius.circular(4),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {
+          print(widget.title);
+        },
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(4),
+                  bottomLeft: Radius.circular(4),
+                ),
+                child: Image(
+                  image: NetworkImage(widget.title['imageUrl']!),
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
+                ),
               ),
-              child: Image(
-                image: NetworkImage(widget.title['imageUrl']!),
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: 51,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                decoration: const BoxDecoration(
-                  color: UtilColor.secondaryBackgroundColor,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(4),
-                    bottomRight: Radius.circular(4),
+              Expanded(
+                child: Container(
+                  height: 51,
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  decoration: const BoxDecoration(
+                    color: UtilColor.secondaryBackgroundColor,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(4),
+                      bottomRight: Radius.circular(4),
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.title['title']!,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.title['title']!,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
