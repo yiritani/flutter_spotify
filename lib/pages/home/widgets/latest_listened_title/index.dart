@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/models/AlbumTitle.dart';
 import 'package:spotify/pages/home/widgets/latest_listened_title/latest_title_card.dart';
 
 class LatestListenedTitle extends StatefulWidget {
@@ -9,48 +10,56 @@ class LatestListenedTitle extends StatefulWidget {
 }
 
 class _LatestListenedTitleState extends State<LatestListenedTitle> {
-  List<Map> _fetchLatestTitles() {
+  List<AlbumTitle> _fetchLatestTitles() {
     return [
-      {
-        'title': '最新のタイトル1',
-        'imageUrl':
+      AlbumTitle(
+        artistName: 'アーティスト1',
+        title: '最新のタイトル1',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル2',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト2',
+        title: '最新のタイトル2',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル3',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト3',
+        title: '最新のタイトル3',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル4',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト4',
+        title: '最新のタイトル4',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル5',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト5',
+        title: '最新のタイトル5',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル6',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト6',
+        title: '最新のタイトル6',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル7',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト7',
+        title: '最新のタイトル7',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
-      {
-        'title': '最新のタイトル8',
-        'imageUrl':
+      ),
+      AlbumTitle(
+        artistName: 'アーティスト8',
+        title: '最新のタイトル8',
+        imageUrl:
             'https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO02QA81-default.jpg',
-      },
+      ),
     ];
   }
 

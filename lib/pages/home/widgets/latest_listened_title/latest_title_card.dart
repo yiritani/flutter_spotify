@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/models/AlbumTitle.dart';
 import 'package:spotify/utils/color.dart';
 
 class LatestListenedTitleCard extends StatefulWidget {
   const LatestListenedTitleCard({super.key, required this.title});
-  final title;
+  final AlbumTitle title;
 
   @override
   State<LatestListenedTitleCard> createState() =>
@@ -13,6 +14,7 @@ class LatestListenedTitleCard extends StatefulWidget {
 class _LatestListenedTitleCardState extends State<LatestListenedTitleCard> {
   @override
   Widget build(BuildContext context) {
+    final title = widget.title;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -29,7 +31,7 @@ class _LatestListenedTitleCardState extends State<LatestListenedTitleCard> {
                   bottomLeft: Radius.circular(4),
                 ),
                 child: Image(
-                  image: NetworkImage(widget.title['imageUrl']!),
+                  image: NetworkImage(title.imageUrl),
                   width: 50,
                   height: 50,
                   fit: BoxFit.cover,
@@ -51,7 +53,7 @@ class _LatestListenedTitleCardState extends State<LatestListenedTitleCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.title['title']!,
+                        title.title,
                         style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
