@@ -3,6 +3,7 @@ import 'package:spotify/pages/home/widgets/category_button.dart';
 import 'package:spotify/pages/home/widgets/flexible_title_list/index.dart';
 import 'package:spotify/pages/home/widgets/latest_listened_title/index.dart';
 import 'package:spotify/pages/home/widgets/new_release/index.dart';
+import 'package:spotify/pages/my_library/widgets/title/index.dart';
 import 'package:spotify/utils/color.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,6 +72,12 @@ class _HomePageState extends State<HomePage> {
                           height: 316,
                           child: FlexibleTitleList(headerTitle: '最近追加したアルバム'),
                         )),
+                    Padding(
+                        padding: EdgeInsets.symmetric(vertical: 4),
+                        child: SizedBox(
+                          height: 316,
+                          child: TitleList(),
+                        ))
                   ],
                 ),
               ),
